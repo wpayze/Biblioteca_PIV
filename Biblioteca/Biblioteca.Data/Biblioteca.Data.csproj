@@ -50,12 +50,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BibliotecaContext.cs" />
+    <Compile Include="Migrations\201610292043293_initialCreate.cs" />
+    <Compile Include="Migrations\201610292043293_initialCreate.Designer.cs">
+      <DependentUpon>201610292043293_initialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610292057247_agregarEditorial.cs" />
+    <Compile Include="Migrations\201610292057247_agregarEditorial.Designer.cs">
+      <DependentUpon>201610292057247_agregarEditorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Modelos\Editorial.cs" />
     <Compile Include="Modelos\Libro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610292043293_initialCreate.resx">
+      <DependentUpon>201610292043293_initialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610292057247_agregarEditorial.resx">
+      <DependentUpon>201610292057247_agregarEditorial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
