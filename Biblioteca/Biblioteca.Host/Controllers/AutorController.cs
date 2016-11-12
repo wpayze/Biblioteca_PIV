@@ -48,7 +48,7 @@ namespace Biblioteca.Host.Controllers
         // GET: api/Autor/5
         public IHttpActionResult Get(int id)
         {
-            var autores = bibliotecaContext.Autores.Find(id);
+            var autores = bibliotecaContext.Autores.Include("Libros").First(a => a.Id == id);
 
             if (autores == null)
             {
