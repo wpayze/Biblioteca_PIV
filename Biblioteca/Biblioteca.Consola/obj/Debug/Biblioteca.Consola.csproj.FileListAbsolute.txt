@@ -11,3 +11,15 @@ C:\Users\AULA\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\bin\Debug\E
 C:\Users\AULA\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\obj\Debug\Biblioteca.Consola.csprojResolveAssemblyReference.cache
 C:\Users\AULA\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\obj\Debug\Biblioteca.Consola.exe
 C:\Users\AULA\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\obj\Debug\Biblioteca.Consola.pdb
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\bin\Debug\Biblioteca.Consola.exe.config
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\bin\Debug\Biblioteca.Consola.exe
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\bin\Debug\Biblioteca.Consola.pdb
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\bin\Debug\Biblioteca.Data.dll
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\bin\Debug\EntityFramework.dll
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\bin\Debug\Biblioteca.Data.pdb
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\bin\Debug\EntityFramework.xml
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\obj\Debug\Biblioteca.Consola.csprojResolveAssemblyReference.cache
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\obj\Debug\Biblioteca.Consola.exe
+C:\Users\Alumno\Documents\Biblioteca_PIV\Biblioteca\Biblioteca.Consola\obj\Debug\Biblioteca.Consola.pdb
