@@ -58,7 +58,12 @@
     <Compile Include="Migrations\201610292057247_agregarEditorial.Designer.cs">
       <DependentUpon>201610292057247_agregarEditorial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611121717305_agregando-autores.cs" />
+    <Compile Include="Migrations\201611121717305_agregando-autores.Designer.cs">
+      <DependentUpon>201611121717305_agregando-autores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Modelos\Autor.cs" />
     <Compile Include="Modelos\Editorial.cs" />
     <Compile Include="Modelos\Libro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610292057247_agregarEditorial.resx">
       <DependentUpon>201610292057247_agregarEditorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611121717305_agregando-autores.resx">
+      <DependentUpon>201611121717305_agregando-autores.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
