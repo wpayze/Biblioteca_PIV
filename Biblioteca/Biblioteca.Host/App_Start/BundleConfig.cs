@@ -22,6 +22,14 @@ namespace Biblioteca.Host
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                "~/Scripts/angular.js", 
+                "~/Scripts/angular-route.js", 
+                "~/Scripts/app/app.js", 
+                "~/Scripts/app/routes.js", 
+                "~/Scripts/app/home/home.controller.js"
+                ));
         }
     }
 }

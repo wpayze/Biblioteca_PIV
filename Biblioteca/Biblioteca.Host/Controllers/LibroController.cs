@@ -85,8 +85,7 @@ namespace Biblioteca.Host.Controllers
                 return BadRequest(ModelState);
             }
 
-            bibliotecaContext.Entry(libro).State =
-                EntityState.Modified;
+            bibliotecaContext.Entry(libro).State = EntityState.Modified;
 
             bibliotecaContext.SaveChanges();
             return Ok(libro);
