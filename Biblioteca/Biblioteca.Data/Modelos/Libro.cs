@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Biblioteca.Data.Modelos
 {
@@ -15,9 +11,7 @@ namespace Biblioteca.Data.Modelos
 
         public int Id { get; set; }
         public string Nombre { get; set; }
-
         public int Año { get; set; }
-
         public Editorial Editorial { get; set; }
 
         public IList<Autor> Autores { get; set; }

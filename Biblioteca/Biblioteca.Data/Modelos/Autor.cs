@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Biblioteca.Data.Modelos
 {
@@ -14,10 +10,7 @@ namespace Biblioteca.Data.Modelos
         }
 
         public int Id { get; set; }
-
         public string Nombre { get; set; }
-
-        public string Nacionalidad { get; set; }
 
         public IList<Libro> Libros { get; set; }
 

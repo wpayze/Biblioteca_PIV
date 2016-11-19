@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Web.Http;
+using System.Web.Http.Description;
 using Biblioteca.Data;
 using Biblioteca.Data.Modelos;
-using System.Web.Http.Description;
+using System.Web.Configuration;
 
 namespace Biblioteca.Host.Controllers
 {
     public class AutorController : ApiController
     {
-        BibliotecaContext bibliotecaContext = new BibliotecaContext("BibliotecaMaestro");
+        BibliotecaContext bibliotecaContext =
+            new BibliotecaContext(WebConfigurationManager.AppSettings["connectionStringParaUsar"]);
 
         protected override void Dispose(bool disposing)
         {
@@ -24,21 +23,6 @@ namespace Biblioteca.Host.Controllers
             base.Dispose(disposing);
         }
 
-        [Route("api/Autor/{idAutor}/libro")]
-        public IHttpActionResult AgregarLibro(int idAutor, Libro nuevoLibro)
-        {
-            Autor autor = bibliotecaContext.Autores.Find(idAutor);
-
-            if (autor == null)
-            {
-                return NotFound();
-            }
-
-            autor.AgregarLibro(nuevoLibro);
-            bibliotecaContext.SaveChanges();
-            return Ok(autor);
-        }
-
         // GET: api/Autor
         public IEnumerable<Autor> Get()
         {
@@ -46,28 +30,27 @@ namespace Biblioteca.Host.Controllers
         }
 
         // GET: api/Autor/5
+        [ResponseType(typeof(Autor))]
         public IHttpActionResult Get(int id)
         {
-            var autores = bibliotecaContext.Autores.Include("Libros").First(a => a.Id == id);
-
-            if (autores == null)
+            var autor = bibliotecaContext.Autores.Find(id);
+            if (autor == null)
             {
                 return NotFound();
             }
             else
             {
-                return Ok(autores);
+                return Ok(autor);
             }
         }
 
-        [ResponseType(typeof(Autor))]
-
         // POST: api/Autor
+        [ResponseType(typeof(Autor))]
         public IHttpActionResult Post(Autor nuevoAutor)
         {
             if (!ModelState.IsValid)
             {
-                BadRequest(ModelState);
+                return BadRequest(ModelState);
             }
 
             bibliotecaContext.Autores.Add(nuevoAutor);
@@ -81,30 +64,52 @@ namespace Biblioteca.Host.Controllers
         {
             if (id != autor.Id)
             {
-                BadRequest(ModelState);
+                return BadRequest(ModelState);
             }
 
-            bibliotecaContext.Entry(autor).State = System.Data.Entity.EntityState.Modified;
-            bibliotecaContext.SaveChanges();
+            bibliotecaContext.Entry(autor).State =
+                EntityState.Modified;
 
+            bibliotecaContext.SaveChanges();
             return Ok(autor);
         }
 
-        // DELETE: api/Autor/5
-        public IHttpActionResult Delete(int id)
+        [ResponseType(typeof(Autor))]
+        [HttpPut]
+        [Route("api/Autor/{idAutor}/Libro/{idLibro}")]
+        public IHttpActionResult AgregarLibro(int idAutor, int idLibro)
         {
+            var autor = bibliotecaContext.Autores.Find(idAutor);
+            var libro = bibliotecaContext.Libros.Find(idLibro);
 
-            var autor = bibliotecaContext.Autores.Find(id);
-
-            if (autor == null)
+            if (autor == null || libro == null)
             {
                 return NotFound();
             }
 
-            bibliotecaContext.Autores.Remove(autor);
+            autor.AgregarLibro(libro);
+
+            bibliotecaContext.Entry(autor).State =
+                EntityState.Modified;
+
+            bibliotecaContext.SaveChanges();
+            return Ok(autor);
+        }
+
+        // DELETE: api/Autor/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult Delete(int id)
+        {
+            var Autor =
+                bibliotecaContext.Autores.Find(id);
+            if (Autor == null)
+            {
+                return NotFound();
+            }
+
+            bibliotecaContext.Autores.Remove(Autor);
             bibliotecaContext.SaveChanges();
             return Ok();
-
         }
     }
 }
