@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Web.Http;
+using System.Web.Http.Description;
 using Biblioteca.Data;
 using Biblioteca.Data.Modelos;
-using System.Web.Http.Description;
+using System.Web.Configuration;
 
 namespace Biblioteca.Host.Controllers
 {
     public class EditorialController : ApiController
     {
-        BibliotecaContext bibliotecaContext = new BibliotecaContext("BibliotecaMaestro");
+        BibliotecaContext bibliotecaContext =
+            new BibliotecaContext(WebConfigurationManager.AppSettings["connectionStringParaUsar"]);
 
         protected override void Dispose(bool disposing)
         {
@@ -35,7 +34,6 @@ namespace Biblioteca.Host.Controllers
         public IHttpActionResult Get(int id)
         {
             var editorial = bibliotecaContext.Editoriales.Find(id);
-            
             if (editorial == null)
             {
                 return NotFound();
@@ -44,7 +42,6 @@ namespace Biblioteca.Host.Controllers
             {
                 return Ok(editorial);
             }
-
         }
 
         // POST: api/Editorial
@@ -53,7 +50,7 @@ namespace Biblioteca.Host.Controllers
         {
             if (!ModelState.IsValid)
             {
-                BadRequest(ModelState);
+                return BadRequest(ModelState);
             }
 
             bibliotecaContext.Editoriales.Add(nuevoEditorial);
@@ -67,21 +64,22 @@ namespace Biblioteca.Host.Controllers
         {
             if (id != editorial.Id)
             {
-                BadRequest(ModelState);
+                return BadRequest(ModelState);
             }
 
-            bibliotecaContext.Entry(editorial).State = System.Data.Entity.EntityState.Modified;
-            bibliotecaContext.SaveChanges();
+            bibliotecaContext.Entry(editorial).State = 
+                EntityState.Modified;
 
+            bibliotecaContext.SaveChanges();
             return Ok(editorial);
         }
 
         // DELETE: api/Editorial/5
+        [ResponseType(typeof(void))]
         public IHttpActionResult Delete(int id)
         {
-
-            var editorial = bibliotecaContext.Editoriales.Find(id);
-
+            var editorial = 
+                bibliotecaContext.Editoriales.Find(id);
             if (editorial == null)
             {
                 return NotFound();
@@ -90,7 +88,6 @@ namespace Biblioteca.Host.Controllers
             bibliotecaContext.Editoriales.Remove(editorial);
             bibliotecaContext.SaveChanges();
             return Ok();
-
         }
     }
 }
