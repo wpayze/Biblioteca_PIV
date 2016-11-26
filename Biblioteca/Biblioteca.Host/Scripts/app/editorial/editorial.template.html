@@ -1,0 +1,53 @@
+﻿<style>
+
+    body{
+        background-color: lightblue;
+    }
+    h1{
+        text-align: center;
+        font-family: verdana;
+        font-size: 40px;
+    }
+    h2{
+        text-align: left;
+        font-family: Calibri;
+        font-size: 25px;
+    }
+
+</style>
+<body>
+<h1><strong>Editorial</strong></h1>
+    <h2>Informacion del Editorial actual</h2>
+</body>
+
+
+<form>
+    <div class="form-group">
+        <label>ID</label>
+        <input class="form-control" id="editorialId" ng-model="editorialActual.id" disabled/>
+    </div>
+    <div class="form-group">
+        <label for="editorialNombre">Nombre</label>
+        <input class="form-control" id="editorialNombre" ng-model="editorialActual.nombre" />
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">Guardar</button>
+        <button class="btn btn-default">Cancelar</button>
+    </div>
+
+</form>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="editorial in editoriales">
+        <td>{{editorial.id}}</td>
+        <td>{{editorial.nombre}}</td>
+        <td>
+            <button class="btn btn-link">Editar</button>        
+        </td>
+    </tr>
+</table>

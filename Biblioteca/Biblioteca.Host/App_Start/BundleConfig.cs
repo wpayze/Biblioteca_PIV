@@ -28,7 +28,9 @@ namespace Biblioteca.Host
                 "~/Scripts/angular-route.js", 
                 "~/Scripts/app/app.js", 
                 "~/Scripts/app/routes.js", 
-                "~/Scripts/app/home/home.controller.js"
+                "~/Scripts/app/home/home.controller.js",
+                "~/Scripts/app/ngMenuBiblioteca/ngMenuBiblioteca.directive.js",
+                "~/Scripts/app/editorial/editorial.controller.js"
                 ));
         }
     }
