@@ -215,8 +215,12 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\editorial\editorial.controller.js" />
+    <Content Include="Scripts\app\editorial\editorial.template.html" />
     <Content Include="Scripts\app\home\home.controller.js" />
     <Content Include="Scripts\app\home\home.template.html" />
+    <Content Include="Scripts\app\ngMenuBiblioteca\ngMenuBiblioteca.directive.js" />
+    <Content Include="Scripts\app\ngMenuBiblioteca\ngMenuBiblioteca.template.html" />
     <Content Include="Scripts\app\routes.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
