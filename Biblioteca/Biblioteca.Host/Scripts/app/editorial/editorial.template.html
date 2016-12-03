@@ -17,21 +17,21 @@
 </style>
 <body>
 <h1><strong>Editorial</strong></h1>
-    <h2>Informacion de los Editoriales</h2>
+    <h2>Ingrese un Nuevo Editorial</h2>
 </body>
 
 
 <form>
     <div class="form-group">
         <label>ID</label>
-        <input class="form-control" id="editorialId" ng-model="editorialActual.id" disabled/>
+        <input class="form-control" id="editorialId" ng-model="editorialActual.Id" disabled/>
     </div>
     <div class="form-group">
         <label for="editorialNombre">Nombre</label>
-        <input class="form-control" id="editorialNombre" ng-model="editorialActual.nombre" />
+        <input class="form-control" id="editorialNombre" ng-model="editorialActual.Nombre" />
     </div>
     <div class="form-group">
-        <button class="btn btn-primary">Guardar</button>
+        <button ng-click="guardarEditorial()" class="btn btn-primary">Guardar</button>
         <button class="btn btn-default">Cancelar</button>
     </div>
 
@@ -44,10 +44,10 @@
         <th></th>
     </tr>
     <tr ng-repeat="editorial in editoriales">
-        <td>{{editorial.id}}</td>
-        <td>{{editorial.nombre}}</td>
+        <td>{{editorial.Id}}</td>
+        <td>{{editorial.Nombre}}</td>
         <td>
-            <button class="btn btn-link">Editar</button>        
+            <button ng-click="editar(editorial)" class="btn btn-link">Editar</button>        
         </td>
     </tr>
 </table>
