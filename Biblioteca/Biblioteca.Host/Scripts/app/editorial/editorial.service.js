@@ -14,7 +14,7 @@
 
             function editarEditorial(editorial)
             {
-                return $http.put(miConfiguracion.urlBackend + 'Api/Editorial' + editorial.Id, editorial);
+                return $http.put(miConfiguracion.urlBackend + 'Api/Editorial/' + editorial.Id, editorial);
             }
 
             function eliminarEditorial(editorial)
