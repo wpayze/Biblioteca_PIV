@@ -216,6 +216,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\editorial\editorial.controller.js" />
+    <Content Include="Scripts\app\editorial\editorial.service.js" />
     <Content Include="Scripts\app\editorial\editorial.template.html" />
     <Content Include="Scripts\app\home\home.controller.js" />
     <Content Include="Scripts\app\home\home.template.html" />
