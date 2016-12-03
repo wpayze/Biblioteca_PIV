@@ -25,7 +25,8 @@ namespace Biblioteca.Host
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular.js", 
-                "~/Scripts/angular-route.js", 
+                "~/Scripts/angular-route.js",
+                "~/Scripts/angular-messages.js",
                 "~/Scripts/app/app.js", 
                 "~/Scripts/app/routes.js", 
                 "~/Scripts/app/home/home.controller.js",
