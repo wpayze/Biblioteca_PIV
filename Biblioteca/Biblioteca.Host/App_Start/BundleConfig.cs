@@ -32,7 +32,9 @@ namespace Biblioteca.Host
                 "~/Scripts/app/home/home.controller.js",
                 "~/Scripts/app/ngMenuBiblioteca/ngMenuBiblioteca.directive.js",
                 "~/Scripts/app/editorial/editorial.controller.js",
-                "~/Scripts/app/editorial/editorial.service.js"
+                "~/Scripts/app/editorial/editorial.service.js",
+                "~/Scripts/app/libro/libro.controller.js",
+                "~/Scripts/app/libro/libro.service.js"
                 ));
         }
     }

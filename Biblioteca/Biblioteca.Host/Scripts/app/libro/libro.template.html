@@ -1,0 +1,84 @@
+﻿<style>
+    body {
+        background-color: lightblue;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: verdana;
+        font-size: 40px;
+    }
+
+    h2 {
+        text-align: left;
+        font-family: Calibri;
+        font-size: 25px;
+    }
+</style>
+<body>
+    <h1><strong>Libro</strong></h1>
+    <h2>{{mensaje}}</h2>
+</body>
+
+
+<form name="libroForm" novalidate>
+
+    <div class="form-group">
+        <label for="libroID">Libro ID</label>
+        <input class="form-control" id="libroId" ng-model="libroActual.Id" ng-disabled="true" />
+    </div>
+    <div class="form-group">
+        <label for="editorialID">Editorial ID</label>
+        <input class="form-control" id="editorialId" ng-model="editorialActual.Id" ng-disabled="true" />
+    </div>
+
+    <div class="form-group">
+        <label for="libroNombre">Nombre</label>
+        <input class="form-control" id="libroNombre" name="libroNombre" ng-model="libroActual.Nombre"
+               required
+               ng-minlength="3"
+               ng-maxlength="25" />
+
+        <div ng-messages="libroForm.libroNombre.$error">
+            <div ng-message="required">El nombre del Libro es requerido</div>
+            <div ng-message="minlength">El nombre del Libro debe tener mas de 3 caracteres.</div>
+            <div ng-message="maxlength">El nombre del Libro debe tener menos de 25 caracteres.</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="libroNombre">Año</label>
+        <input class="form-control" id="libroAno" name="libroAno" ng-model="libroActual.Año"
+               required
+               ng-maxlength="4" />
+
+        <div ng-messages="libroForm.libroAno.$error">
+            <div ng-message="required">El año del Libro es requerido</div>
+            <div ng-message="maxlength">El año del Libro debe tener menos de 4 car&aacute;cteres.</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button ng-disabled="libroForm.$invalid" ng-click="guardarLibro()" class="btn btn-primary">{{accionActual}}</button>
+        <button ng-click="limpiar()" class="btn btn-default">Cancelar</button>
+    </div>
+
+</form>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="editorial in editoriales">
+        <td>{{editorial.Id}}</td>
+        <td>{{editorial.Nombre}}</td>
+        <td>
+            <button ng-click="editar(editorial)" class="btn btn-warning">Editar</button>
+        </td>
+        <td>
+            <button ng-click="eliminar(editorial)" class="btn btn-danger">Eliminar</button>
+        </td>
+    </tr>
+</table>
