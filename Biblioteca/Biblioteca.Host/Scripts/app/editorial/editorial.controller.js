@@ -48,9 +48,10 @@
                 $scope.mensaje = 'Elimine el Elemento Seleccionado';
                 $scope.limpiar();
                 alert('Editorial Eliminada!');
-            })
+            }, function (error) {
+                alert('Error eliminando editorial!!!')
+            });
             }
-
             
         }
         $scope.limpiar = function () {

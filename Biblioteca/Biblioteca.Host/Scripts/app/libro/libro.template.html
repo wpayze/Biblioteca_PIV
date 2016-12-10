@@ -47,14 +47,30 @@
     </div>
 
     <div class="form-group">
-        <label for="libroNombre">Año</label>
-        <input class="form-control" id="libroAno" name="libroAno" ng-model="libroActual.Año"
+        <label for="libroAno">Año</label>
+        <input class="form-control" type="number" id="libroAno" name="libroAno" ng-model="libroActual.Ano"
                required
+               ng-minlength="1"
                ng-maxlength="4" />
 
         <div ng-messages="libroForm.libroAno.$error">
             <div ng-message="required">El año del Libro es requerido</div>
+            <div ng-message="minlength">
+
+            </div>
             <div ng-message="maxlength">El año del Libro debe tener menos de 4 car&aacute;cteres.</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <label>Editorial</label>
+        <select name="libroEditorial" class="form-control" ng-model="editorialSeleccionada"
+                ng-options="editorial.Nombre for editorial in editoriales" required>
+        </select>
+
+        <div ng-messages="libroForm.libroEditorial.$error">
+            <div ng-message="required">La editorial del libro es requerida</div>
         </div>
     </div>
 
@@ -69,16 +85,20 @@
     <tr>
         <th>ID</th>
         <th>Nombre</th>
-        <th></th>
+        <th>Año</th>
+        <th>Editorial<th>
     </tr>
-    <tr ng-repeat="editorial in editoriales">
-        <td>{{editorial.Id}}</td>
-        <td>{{editorial.Nombre}}</td>
+    <tr ng-repeat="libro in libros">
+        <td>{{libro.Id}}</td>
+        <td>{{libro.Nombre}}</td>
+        <td>{{libro.Ano}}</td>
+        <td>{{libro.Editorial.Nombre}} </td>
+        <td> </td>
         <td>
-            <button ng-click="editar(editorial)" class="btn btn-warning">Editar</button>
+            <button ng-click="editar(libro)" class="btn btn-warning">Editar</button>
         </td>
         <td>
-            <button ng-click="eliminar(editorial)" class="btn btn-danger">Eliminar</button>
+            <button ng-click="eliminar(libro)" class="btn btn-danger">Eliminar</button>
         </td>
     </tr>
 </table>

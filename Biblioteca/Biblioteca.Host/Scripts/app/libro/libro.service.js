@@ -19,7 +19,12 @@
                 return $http.delete(miConfiguracion.urlBackend + 'Api/Libro/' + libro.Id)
             }
 
+            function agregarEditorial(libro, editorial) {
+                return $http.put(miConfiguracion.urlBackend + 'api/Libro/' + libro.Id + '/editorial/' + editorial.Id)
+            }
+
             return {
+                agregarEditorial: agregarEditorial,
                 obtenerLibros: obtenerLibros,
                 agregarLibro: agregarLibro,
                 editarLibro: editarLibro,

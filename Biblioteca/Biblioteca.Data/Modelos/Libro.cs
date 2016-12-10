@@ -11,7 +11,7 @@ namespace Biblioteca.Data.Modelos
 
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public int Año { get; set; }
+        public int Ano { get; set; }
         public Editorial Editorial { get; set; }
 
         public IList<Autor> Autores { get; set; }
